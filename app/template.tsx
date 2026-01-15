@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { animatePageIn } from "@/utils/animations";
+import Image from "next/image";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -15,9 +16,13 @@ export default function Template({ children }: { children: React.ReactNode }) {
         id="banner"
         className="fixed inset-0 bg-neutral-950 z-200 flex flex-col items-center justify-center gap-6"
       >
-        <div className="text-white text-3xl font-bold tracking-wide">
-          SGMUN&apos;26
-        </div>
+        <Image
+          src="/images/sgmun-trimmed-notext-transparent.png"
+          alt="SGMUN 26 Logo"
+          width={300}
+          height={300}
+          priority
+        />
 
         {/* Spinner */}
         <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />

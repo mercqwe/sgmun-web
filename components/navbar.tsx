@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   Sheet,
   SheetContent,
@@ -38,13 +39,20 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/80 backdrop-blur-md shadow-md border-b border-border"
-          : "bg-gradient-to-b from-black/20 via-black/0 to-transparent"
+          : "bg-linear-to-b from-black/20 via-black/0 to-transparent"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
+            <Image
+              src="/images/sgmun-trimmed-notext-transparent.png"
+              alt="SGMUN 26 Logo"
+              width={60}
+              height={60}
+              priority
+            />
             <div
               className={`text-2xl font-bold transition-colors ${
                 isScrolled ? "text-primary" : "text-white"
