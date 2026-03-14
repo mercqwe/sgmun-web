@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Users, User, Briefcase, UserCheck, Gavel } from "lucide-react"
+import { Users, User, Briefcase, UserCheck, Gavel, Timer } from "lucide-react"
 
 const applications = [
   {
@@ -8,30 +8,28 @@ const applications = [
     description: "Apply as a school delegation.",
     icon: Users,
     link: "#",
+    isActive: false, // This form is open
   },
   {
     title: "Individual Delegate Application",
     description: "Apply as an individual delegate.",
     icon: User,
-    link: "#",
-  },
-  {
-    title: "CTM Application",
-    description: "Apply for Crisis Team Member positions.",
-    icon: Briefcase,
-    link: "#",
+    link: "https://forms.gle/1cwW81Ajw37KKHy98",
+    isActive: true, // This form is open
   },
   {
     title: "Administration Staff Application",
     description: "Join the organization and logistics team.",
     icon: UserCheck,
     link: "#",
+    isActive: false, // This form is closed/coming soon
   },
   {
     title: "Chairboard Application",
     description: "Apply for Committee Director positions.",
     icon: Gavel,
     link: "#",
+    isActive: false, // This form is closed/coming soon
   },
 ]
 
@@ -42,7 +40,7 @@ export function RegistrationSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Registration & Applications</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Select your role to proceed to the application form
+            Select your role to proceed to the application form. Note that some positions may open later.
           </p>
           <div className="w-24 h-1 bg-primary mx-auto mt-6" />
         </div>
@@ -53,18 +51,42 @@ export function RegistrationSection() {
             return (
               <Card
                 key={app.title}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50 flex flex-col"
+                className={`group transition-all duration-300 border-border/50 flex flex-col ${app.isActive
+                    ? "hover:shadow-xl hover:-translate-y-1"
+                    : "opacity-80 grayscale-[0.5]"
+                  }`}
               >
                 <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-colors ${app.isActive ? "bg-primary/10 group-hover:bg-primary/20" : "bg-muted"
+                    }`}>
+                    {app.isActive ? (
+                      <Icon className="w-6 h-6 text-primary" />
+                    ) : (
+                      <Timer className="w-6 h-6 text-muted-foreground" />
+                    )}
                   </div>
-                  <CardTitle className="text-xl">{app.title}</CardTitle>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    {app.title}
+                    {!app.isActive && (
+                      <span className="text-[10px] uppercase tracking-wider bg-muted text-muted-foreground px-2 py-1 rounded">
+                        Soon
+                      </span>
+                    )}
+                  </CardTitle>
                   <CardDescription className="leading-relaxed">{app.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="mt-auto">
-                  <Button className="w-full" asChild>
-                    <a href={app.link}>Application Form</a>
+                  <Button
+                    className="w-full"
+                    variant={app.isActive ? "default" : "secondary"}
+                    disabled={!app.isActive}
+                    asChild={app.isActive}
+                  >
+                    {app.isActive ? (
+                      <a href={app.link}>Application Form</a>
+                    ) : (
+                      <span>Stay Tuned</span>
+                    )}
                   </Button>
                 </CardContent>
               </Card>

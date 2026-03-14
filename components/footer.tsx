@@ -65,24 +65,19 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:info@sgmun.com"
+                  href="mailto:sgmtalmun@gmail.com"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  info@sgmun.com
+                  sgmtalmun@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/80">
-                  +1 (555) 123-4567
-                </span>
-              </li>
+
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <span className="text-primary-foreground/80">
-                  Your School Name
+                  Sabiha Gökçen Vocational and Technical Anatolian High School
                   <br />
-                  City, State ZIP
+                  Eskişehir, Turkey
                 </span>
               </li>
             </ul>
@@ -94,20 +89,6 @@ export function Footer() {
             <p className="text-primary-foreground/60 text-sm">
               © {currentYear} SGMUN. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors"
-              >
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </div>

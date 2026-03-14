@@ -12,7 +12,7 @@ interface TimeLeft {
 
 export function CountdownSection() {
   // Set your target date here
-  const targetDate = new Date("2026-06-01T09:00:00").getTime()
+  const targetDate = new Date("2026-04-16T08:00:00").getTime()
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,

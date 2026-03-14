@@ -6,72 +6,32 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Globe,
-  Shield,
-  Heart,
-  Leaf,
-  GraduationCap,
-  Flame,
-  Gavel,
-  Users,
+  Plane,
+  ShieldAlert,
+  Users2,
 } from "lucide-react";
 
 const committees = [
   {
-    name: "G-20",
-    icon: Globe,
+    name: "ICAO",
+    icon: Plane,
     agenda:
-      "Addressing global economic recovery and sustainable development strategies in a post-pandemic world.",
-    bg: "/images/committees/placeholder.png",
+      "In the International Civil Aviation Organization (ICAO), international aviation security procedures are discussed to address past security failures. Events such as the September 11 attacks showed the importance of stronger global aviation security. Delegates debate ways to improve safety measures, prevent terrorism, and strengthen international cooperation in aviation.",
+    bg: "/images/committees/icao.jpeg",
   },
   {
-    name: "DISEC",
-    icon: Shield,
+    name: "UNSC",
+    icon: ShieldAlert,
     agenda:
-      "Regulating cyber warfare and ensuring international cybersecurity standards.",
-    bg: "/images/committees/placeholder.png",
+      "In the United Nations Security Council (UNSC), the **South China Sea disputes are discussed as an important international security issue. These disputes involve territorial claims, maritime rights, and military activities between several countries. Delegates debate possible solutions to reduce tensions and maintain peace and stability in the region.",
+    bg: "/images/committees/unsc.jpeg",
   },
   {
-    name: "WHO",
-    icon: Heart,
+    name: "SOCHUM",
+    icon: Users2,
     agenda:
-      "Strengthening global health systems and pandemic preparedness for future health crises.",
-    bg: "/images/committees/placeholder.png",
-  },
-  {
-    name: "UNEP",
-    icon: Leaf,
-    agenda:
-      "Combating climate change through renewable energy adoption and carbon neutrality goals.",
-    bg: "/images/committees/placeholder.png",
-  },
-  {
-    name: "UNICEF",
-    icon: GraduationCap,
-    agenda:
-      "Ensuring equitable access to quality education for children in conflict zones.",
-    bg: "/images/committees/placeholder.png",
-  },
-  {
-    name: "IAEA",
-    icon: Flame,
-    agenda:
-      "Promoting nuclear safety and preventing nuclear proliferation in developing nations.",
-    bg: "/images/committees/placeholder.png",
-  },
-  {
-    name: "ICJ",
-    icon: Gavel,
-    agenda:
-      "International Court of Justice: Adjudicating disputes on maritime boundaries and territorial claims.",
-    bg: "/images/committees/placeholder.png",
-  },
-  {
-    name: "Crisis Committee",
-    icon: Users,
-    agenda:
-      "Dynamic crisis simulation requiring rapid response to evolving international incidents.",
-    bg: "/images/committees/placeholder.png",
+      "In the Social, Humanitarian and Cultural Committee (SOCHUM), freedom of expression is discussed as a key human right. It allows people to express their ideas, opinions, and beliefs freely. Delegates debate how to protect this right while also preventing hate speech and protecting the rights of others.",
+    bg: "/images/committees/sochum.jpeg",
   },
 ];
 
@@ -89,7 +49,8 @@ export function CommitteesSection() {
           <div className="w-24 h-1 bg-primary mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Updated grid to center the 3 items on larger screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {committees.map((committee) => {
             const Icon = committee.icon;
             return (
@@ -103,14 +64,16 @@ export function CommitteesSection() {
                   style={{ backgroundImage: `url(${committee.bg})` }}
                 />
 
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+
                 <CardHeader className="relative z-10">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-primary/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/40 transition-colors">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{committee.name}</CardTitle>
+                  <CardTitle className="text-xl text-white">{committee.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="relative z-10">
-                  <CardDescription className="leading-relaxed text-white">
+                  <CardDescription className="leading-relaxed text-white/90 font-medium">
                     {committee.agenda}
                   </CardDescription>
                 </CardContent>

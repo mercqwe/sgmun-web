@@ -13,7 +13,6 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <LetterSection />
         <CommitteesSection />
         <CountdownSection />
         <FaqSection />
