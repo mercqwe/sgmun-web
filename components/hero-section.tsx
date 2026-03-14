@@ -49,7 +49,7 @@ export function HeroSection() {
         </h1>
 
         <p className="text-xl md:text-2xl text-white/90 mb-4">
-          Date TBA · Your School · Your City
+          16-17-18 April · Sabiha Gökçen MTAL · Eskişehir
         </p>
 
         <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto mb-10">

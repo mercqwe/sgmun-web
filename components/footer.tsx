@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,9 +13,7 @@ export function Footer() {
               SGMUN<span className="text-accent">&apos;26</span>
             </h3>
             <p className="text-primary-foreground/80 leading-relaxed">
-              An exceptional Model United Nations conference bringing together
-              future leaders to address global challenges through diplomatic
-              discourse.
+              SGMUN’26 is a unique MUN conference proudly organized by Sabiha Gökçen Vocational and Technical Anatolian High School. It offers students the chance to debate global issues, develop diplomacy and public speaking skills, and experience the atmosphere of an international conference. SGMUN’26 promises an inspiring and memorable experience for every delegate.
             </p>
           </div>
 
