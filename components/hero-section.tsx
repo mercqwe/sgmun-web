@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 export function HeroSection() {
   return (
@@ -31,17 +32,23 @@ export function HeroSection() {
             {/* Background Glow/Ring */}
             <div className="absolute inset-0 rounded-full bg-white/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <div className="relative p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 shadow-2xl transition-colors duration-500 group-hover:bg-white/10 group-hover:border-white/20">
+            <div className="relative p-3 md:p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 shadow-2xl transition-colors duration-500 group-hover:bg-white/10 group-hover:border-white/20">
               <Image
                 src="/images/sgmun-trimmed-transparent.png"
                 alt="SGMUN Logo"
-                width={180}
-                height={180}
+                width={140}
+                height={140}
                 priority
-                className="drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-500 group-hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] group-hover:rotate-3"
+                className="w-[110px] md:w-[140px] lg:w-[160px] h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-500 group-hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] group-hover:rotate-3"
               />
             </div>
           </div>
+        </div>
+
+        <div className="mb-4 flex justify-center">
+          <Badge variant="outline" className="text-blue-300 border-blue-400/40 bg-blue-500/10 backdrop-blur-sm px-4 py-1">
+            Mock MUN
+          </Badge>
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6">
