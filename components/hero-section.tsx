@@ -16,8 +16,11 @@ export function HeroSection() {
           backgroundImage: "url('/images/people.png')",
         }}
       >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_35%,rgba(0,0,0,0.9)_100%)]" />
+        {/* less blur + more light */}
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+
+        {/* softer vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_40%,rgba(0,0,0,0.75)_100%)]" />
       </div>
 
       {/* Content */}
