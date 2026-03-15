@@ -73,14 +73,6 @@ export function HeroSection() {
           </Button>
         </div>
       </div>
-
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-pulse cursor-pointer hover:text-white transition-colors">
-        <span className="text-sm uppercase tracking-widest font-medium">
-          Scroll Down
-        </span>
-        <ChevronDown className="w-6 h-6" />
-      </div>
     </section>
   );
 }
